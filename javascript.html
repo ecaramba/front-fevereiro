@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de JS</title>
+
+    <script>
+
+        // comentario de uma linha
+        /*
+            var nome = prompt("Digite seu nome");        
+
+            alert("Olá " + nome);
+        */
+
+        var nome = "Edir"; // string
+        var idade = 23; // number -> integer
+        var peso = 43.7; // number -> float
+        var acordado = true; // boolean 
+
+        // js é dinamico
+        // js é tipagem fraca
+
+        
+        /*
+        >  maior
+        <  menor
+        >= maior ou igual
+        <= menor ou igual
+        == igual
+        != diferente
+        */
+       
+
+        /*
+            digita o ano de nasciemnto e calcula a idade
+
+            > 13 adolescente
+            > 18 adulto
+            > 60 idoso
+            < 12 criança
+            < 2  bebe
+        */
+
+    function verifica_idade()
+    {
+        idade = prompt("Digite o ano de nascimento");
+
+        idade = 2025 - idade;
+
+        if (idade >= 60) 
+        {
+            alert('Idoso');
+        } else if (idade >= 18)
+        {
+            alert("adulto");
+        } else if (idade >= 13)
+        {
+            alert("adoslestente")
+        }
+          else if (idade <= 2)
+        {
+            alert("bebe");
+        } 
+        else {
+            alert("criança")
+        }
+    }
+
+    function maior()
+    {
+        var n1 = prompt("digite o numero 1"); // 1 3 1 2 2 3
+        var n2 = prompt("digite o numero 2"); // 2 2 3 3 1 1
+        var n3 = prompt("digite o numero 3"); // 3 1 2 1 3 2
+                                              // 
+
+        if (n1 > n2)
+        {
+            if (n1 > n3)
+            {
+                alert("O numero maior é: " + n1);
+            } else {
+                alert("O numero maior é: " + n3);
+            }
+        } else {
+
+            if (n2 > n3)
+            {
+               alert("O numero maior é: " + n2);
+            } else {
+                alert("O numero maior é: " + n3);
+            }
+        }
+    }
+    </script>
+
+</head>
+<body>
+
+    <h1>Aula de Javascript</h1>
+
+    <p>Javascript não é Java</p>
+    <p>O js interpretado</p>
+
+    <button onclick="verifica_idade()">Idade</button>
+
+    <button onclick="maior()">Maior</button>
+    
+</body>
+</html>
