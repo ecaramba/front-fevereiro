@@ -31,6 +31,23 @@ while (ini <= fim)
     ini = ini + 1;
 } 
 
+
+for (var ini = 0; ini <= fim; ini = ini + 1)
+{
+    console.log(cidades[ini]);
+}
+
+// imprimir na ordem inversa
+var ini = cidades.length - 1;
+var fim = 0;
+
+while (ini >= fim) 
+{
+    console.log(cidades[ini]);
+
+    ini = ini - 1;
+} 
+
 var n1 = 2;
 var n2 = 3;
 var n3 = 8;
