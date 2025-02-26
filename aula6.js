@@ -6,7 +6,7 @@
             return resultado;
         }
 
-        soma(2, 3);
+        soma("2", 3);
 
         function oi()
         {
@@ -29,4 +29,41 @@
 
             mensagem.innerText = primeira.toUpperCase() + resto.toLowerCase();
 
+        }
+
+        function somar()
+        {
+            var resultado = parseInt(num1.value) + parseInt(num2.value);
+            mensagem.innerText = resultado;
+        }
+
+        function par()
+        {
+            var valor = texto.value;
+
+            if ( (valor % 2) == 0)
+            {
+                mensagem.innerText = "Par";
+            } else 
+            {
+                mensagem.innerText = "Impar";
+            }
+        }
+
+        function vogal()
+        {
+            var valor = texto.value;
+
+            // a e i o u
+            // ou -> ||
+            // e -> &&
+
+            if (valor == "a" || valor == "e" || valor == "i" || valor == "o" || valor == "u")
+            {
+                mensagem.innerText = "Vogal";
+            } 
+            else 
+            {
+                mensagem.innerText = "Consoante";
+            }
         }
