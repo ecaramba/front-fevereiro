@@ -80,4 +80,30 @@ function notas()
 function fibo()
 {
     var num = valor.value;
+    var n1 = 0;
+    var n2 = 1;
+    
+    if (num >= 2)
+    {
+        console.log(n1);
+        console.log(n2);
+    } else if (num == 1)
+    {
+        console.log(n1);
+    }
+    
+    while(num > 2)
+    {
+        
+        var n3 = n1 + n2;
+        
+        console.log(n3);
+
+        n1 = n2;
+        n2 = n3;
+
+        // num = num - 1
+        // num -= 1;
+        num--;
+    }
 }
