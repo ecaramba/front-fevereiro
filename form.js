@@ -7,7 +7,7 @@ $(document).ready(function(){
 
         if(nome == "")
         {
-            alert("O campo nome é obrigatório");
+            $("#nome").addClass("is-invalid")
         }
 
     }); // fim do bt-cadastrar
