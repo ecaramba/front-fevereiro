@@ -12,12 +12,16 @@ $(document).ready(function(){
 
         $("input, select").removeClass("is-invalid");
 
+        var regex_fone = /^\([0-9]{2}\)[0-9]{4,5}-[0-9]{4}$/gm;
+
+        var regex_email = /^[a-z0-9._\-]+@[a-z0-9.]+$/gm;
+
         if(nome.trim().length <= 2)
         {
             $("#nome").addClass("is-invalid")
         }
 
-        if(telefone == "")
+        if(telefone == "" || regex_fone.test(telefone) == false)
         {
             $("#telefone").addClass("is-invalid")
         }
@@ -27,7 +31,7 @@ $(document).ready(function(){
             $("#cidade").addClass("is-invalid")
         }
 
-        if(email == "")
+        if(email == "" || regex_email.test(email) == false)
         {
             $("#email").addClass("is-invalid")
         }
@@ -44,14 +48,26 @@ $(document).ready(function(){
 
     }); // fim do bt-cadastrar
 
+    // bloqueio das teclas
     $("#telefone").keydown(function(ev){
 
-        console.log(ev.keyCode);
-        
-        if (ev.keyCode < 48 || ev.keyCode > 57 )
-        {
-            return false;
-        }
+ 
+            console.log(ev.keyCode);
+            if (
+                ev.keyCode == 8 || // backspace
+                ev.keyCode == 16 || // shift
+                ev.keyCode == 32 || // espaço
+                ev.keyCode == 189 || // -
+                ev.keyCode >= 35 && ev.keyCode <= 40 || // setas, home e end
+                ev.keyCode == 46 || // delete
+                ev.keyCode >= 48 && ev.keyCode <= 57 || // 0-9
+                ev.keyCode >= 97 && ev.keyCode <= 105 // 0-9
+            ) {
+                return true;
+            } else {
+                return false;
+            }
+     
 
     }); // fim keydown
 
